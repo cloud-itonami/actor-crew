@@ -1,0 +1,10 @@
+{:repo/id "cloud-itonami/actor-crew"
+ :repo/plane :role
+ :repo/role :governed-executable-actor
+ :repo/execution :resident
+ :actor/id :crew
+ :actor/identity "did:web:crew.etzhayyim.com"
+ :repo/boundary {:subject :maritime-crew-and-stcw-operations
+                 :business-owner :cloud-itonami
+                 :does-not-own [:etzhayyim-charter :etzhayyim-council :organism-state]
+                 :compatibility-repository "etzhayyim/com-etzhayyim-crew"}}
