@@ -31,7 +31,7 @@ It does not own etzhayyim's Charter, Council, or artificial-organism state.
 ## 1. Run the contract suite
 
 ```
-nbb scripts/run_contract_suite.cljs
+nbb scripts/run_contract_suite.cljk
 ```
 
 Observed:
@@ -85,7 +85,7 @@ measures anything.
 Keep the staged tree the runner builds, then query it:
 
 ```
-nbb scripts/run_contract_suite.cljs --keep
+nbb scripts/run_contract_suite.cljk --keep
 ```
 
 It prints `KEPT  <dir>`. With no attestations, every cell is blocked:
@@ -158,7 +158,7 @@ the suite is not measuring the invariant you thought it was.
 |---|---|
 | `src/crew/murakumo.kotoba` | the actor boundary: cells, gates, plans, effects |
 | `test/crew/murakumo_test.kotoba` | the contract suite, written against `cell-specs` rather than against named cells |
-| `scripts/run_contract_suite.cljs` | the runner in step 1 |
+| `scripts/run_contract_suite.cljk` | the runner in step 1 |
 | `README.edn` | machine-readable ownership boundary |
 | `actor-manifest.jsonld` | the manifest the cells were generated from |
 | `.well-known/did.json` | the DID document served for `crew.etzhayyim.com` |

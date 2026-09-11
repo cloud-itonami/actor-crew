@@ -20,7 +20,7 @@ without performing them — a cell whose gates are unattested plans zero effects
 ## Running the contract suite
 
 ```
-nbb scripts/run_contract_suite.cljs
+nbb scripts/run_contract_suite.cljk
 ```
 
 `docs/operator-quickstart.md` walks this end to end, including how to read a
