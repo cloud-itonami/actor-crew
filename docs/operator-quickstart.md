@@ -31,7 +31,7 @@ It does not own etzhayyim's Charter, Council, or artificial-organism state.
 ## 1. Run the contract suite
 
 ```
-nbb scripts/run_contract_suite.cljk
+kbb --backend sci scripts/run_contract_suite.cljk
 ```
 
 Observed:
@@ -60,7 +60,7 @@ located, when `nbb` will not start, when no test summary is produced, and when
 a run collects zero tests. All five were provoked and observed; the zero-test
 one matters most, and step 4 says why.
 
-## 2. Do not trust `clojure -M:test`
+## 2. Do not trust `kbb -M:test`
 
 The README used to name it. Run it today and it prints:
 
@@ -85,13 +85,13 @@ measures anything.
 Keep the staged tree the runner builds, then query it:
 
 ```
-nbb scripts/run_contract_suite.cljk --keep
+kbb --backend sci scripts/run_contract_suite.cljk --keep
 ```
 
 It prints `KEPT  <dir>`. With no attestations, every cell is blocked:
 
 ```
-nbb --classpath "<dir>/src:<text-src>" -e '(require (quote [crew.murakumo :as m])) \
+kbb --backend sci --classpath "<dir>/src:<text-src>" -e '(require (quote [crew.murakumo :as m])) \
   (let [p (m/cell-plan :health {})] (println :status (:status p)) \
     (println :missing (count (:missing-gates p))) (println :effects (count (:effects p))))'
 ```
@@ -107,7 +107,7 @@ Observed:
 Attest all 7 gates and the same cell plans a write:
 
 ```
-nbb --classpath "<dir>/src:<text-src>" -e '(require (quote [crew.murakumo :as m]))
+kbb --backend sci --classpath "<dir>/src:<text-src>" -e '(require (quote [crew.murakumo :as m]))
 (def attested (into {} (map (fn [g] [g "attested"])) m/common-gates))
 (let [p (m/cell-plan :health {:attestations attested :request-id "req-1"})]
   (println :status (:status p)) (println :missing (count (:missing-gates p)))

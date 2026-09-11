@@ -20,13 +20,13 @@ without performing them — a cell whose gates are unattested plans zero effects
 ## Running the contract suite
 
 ```
-nbb scripts/run_contract_suite.cljk
+kbb --backend sci scripts/run_contract_suite.cljk
 ```
 
 `docs/operator-quickstart.md` walks this end to end, including how to read a
 cell plan and how to confirm the suite still bites.
 
-**`clojure -M:test` no longer measures anything here.** The sources were
+**`kbb -M:test` no longer measures anything here.** The sources were
 renamed from `.cljc` to `.kotoba` on 2026-09-10; Clojure's loader cannot see a
 `.kotoba` file, so that command collects zero tests and exits 0 — the same exit
 code it would give for a suite that passed. Use the runner above, which refuses
