@@ -28,7 +28,7 @@
   the `Node 側の検証/テストハーネス` case, which is nbb (`.cljs`).
 
   Usage:
-    nbb scripts/run_contract_suite.cljs [--text-src <path>] [--keep]"
+    nbb scripts/run_contract_suite.cljk [--text-src <path>] [--keep]"
   (:require ["node:fs" :as fs]
             ["node:os" :as os]
             ["node:path" :as path]
