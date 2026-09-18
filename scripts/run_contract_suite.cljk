@@ -49,7 +49,7 @@
   ;; nbb is ESM, so there is no __filename. nbb.core/*file* is this script.
   (path/resolve (path/dirname (path/dirname *file*))))
 
-(def source-exts #{".kotoba" ".cljc" ".cljs" ".clj"})
+(def source-exts #{".kotoba" ".cljc" ".cljk" ".clj"})
 
 (defn- walk [dir]
   (if-not (fs/existsSync dir)
@@ -81,7 +81,7 @@
   (or (arg-value "--text-src")
       (some-> js/process.env.KOTOBA_TEXT_SRC)
       (let [candidate (path/resolve repo-root ".." ".." "kotoba-lang" "text" "src")]
-        (when (fs/existsSync (path/join candidate "kotoba" "lang" "text.cljc"))
+        (when (fs/existsSync (path/join candidate "kotoba" "lang" "text.cljk"))
           candidate))))
 
 (defn- refuse [& msg]
